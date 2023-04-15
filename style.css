@@ -1,0 +1,27 @@
+body{
+	--current-color: currentColor;
+	--animation-time: 0.75s;
+	background-color: #EEE;
+	transition: background-color var(--animation-time) ease;
+}
+#name{
+	line-height: 1.5;
+	padding: 10px 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+button{
+	display: inline-block;
+	color: var(--current-color);
+	border: 2px solid var(--current-color);
+	font-size: medium;
+	border-radius: 3px;
+	line-height: 1;
+	padding: 10px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: background-color var(--animation-time) ease,border-color var(--animation-time) ease,color var(--animation-time) ease;
+}
+a{
+	text-decoration: none;
+}
