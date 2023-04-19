@@ -1,11 +1,20 @@
 ﻿<!DOCTYPE html>
 <html>
 	<head>
+		<title>Music Player</title>
 		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
-	<body>
-		<div><h2 id="name">Merry Christmas Mr. Lawrence</h2></div>
+	<body style="margin: 10px;">
+		<h2 id="name">Merry Christmas Mr. Lawrence</h2>
 		<!--<audio preload="auto" controls></audio>-->
+		<div id="bar">
+			<div id="container">
+				<div id="progress"></div>
+				<div id="circle"><div id="cir"></div></div>
+			</div>&nbsp;
+			<span id="playing_time">00:00</span><span> / </span><span id="goal_time">00:00</span>
+		</div>
+		<br>
 		<button id="last_song">上一首</button>
 		<button id="play_song">播放</button>
 		<button id="next_song">下一首</button>
