@@ -1,5 +1,5 @@
 - v0.6.1
-- 修复了触屏会同时出发touchstart和mousedown的bug
+- 修复了触屏会同时触发touchstart和mousedown的bug
 
 - v0.6
 - 增加了触屏事件
