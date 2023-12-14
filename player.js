@@ -4,16 +4,30 @@ window.$=$
 var playing=0
 var audio=new Audio()
 audio.preload="auto"
-audio.src="Audio/"+list[playing]
+audio.src=list[playing]
 document.body.append(audio)
+const cover=$("cover")
+const part=["Part 1 August","Part 2 Via","Part 3 Summer","Part 4 Jack","Part 5 Justin","Part 6 August","Part 7 Miranda","Part 8 August","Appendix"]
 const button_text=()=>{
-	if(!audio.paused) $("play_song").innerText="暂停"
-	else $("play_song").innerText="播放"
+	if(!audio.paused) $("play_song").innerText="Pause"
+	else $("play_song").innerText="Play"
 }
 const song_name=()=>{
 	var name=list[playing].slice(0,-4)
-	$("name").innerText=name
-	document.title="▶ "+name
+	if(playing>=0&&playing<=9) name=name.slice(3)
+	else name=name.slice(4)
+	if(playing>=0&&playing<=8)
+	{
+		$("name").innerText=part[playing]
+		$("cover").src="./image/"+part[playing]+".png"
+	}
+	else
+	{
+		$("name").innerText=name
+		$("cover").src="./audio/cover.jpg"
+	}
+	$("writer").innerText=writer[playing]
+	document.title="▶ "+$("name").innerText
 }
 const play_song=()=>{
 	if(!audio.paused) audio.pause(),document.title="Music Player"
@@ -24,7 +38,8 @@ const last_song=()=>{
 	playing--
 	if(playing<0) playing=list.length-1
 	var play=!audio.paused
-	audio.src="Audio/"+list[playing]
+	if(list[playing].search("http")==-1) audio.src="Audio/"+list[playing]
+	else audio.src=list[playing]
 	song_name()
 	if(play) audio.play()
 }
@@ -32,7 +47,8 @@ const next_song=()=>{
 	playing++
 	if(playing==list.length) playing=0
 	var play=!audio.paused
-	audio.src="Audio/"+list[playing]
+	if(list[playing].search("http")==-1) audio.src="Audio/"+list[playing]
+	else audio.src=list[playing]
 	song_name()
 	if(play) audio.play()
 }
@@ -42,9 +58,13 @@ const time=$("playing_time")
 const secTostr=(sec)=>{
 	var min=Math.floor(sec/60)
 	sec=Math.floor(sec-min*60)
+	var hour=Math.floor(min/60)
+	min=Math.floor(min-hour*60)
+	hour=String(hour)
 	min=String(min),sec=String(sec)
 	if(min.length<=1) min="0"+min
 	if(sec.length<=1) sec="0"+sec
+	if(hour!="0") return hour+":"+min+":"+sec
 	return min+":"+sec
 }
 const update=()=>{
@@ -80,7 +100,7 @@ const jumpTo=(event)=>{
 			break
 	}
 	if(ticker) clearInterval(ticker),ticker=null
-	tmpx-=8
+	tmpx-=40
 	if(tmpx>400) tmpx=400
 	else if(tmpx<0) tmpx=0
 	pro.style.width=tmpx/4+"%"

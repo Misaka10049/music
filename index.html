@@ -4,8 +4,12 @@
 		<title>Music Player</title>
 		<link rel="stylesheet" type="text/css" href="style.css">
 	</head>
-	<body style="margin: 10px;">
-		<h2 id="name">Merry Christmas Mr. Lawrence</h2>
+	<body style="margin: 40px;">
+		<img id="cover" src="./image/Part 1 August.png" width="200px" style="vertical-align: middle; border-radius: 10px;">
+		<div style="display:inline-block;padding-left: 10px;">
+			<span id="name" style="font-weight: 600;letter-spacing: 0.02em;line-height: 2;font-size: 20px;">Part 1 August</span><br>
+			<span id="writer" style="font-weight: 600;letter-spacing: 0.02em;line-height: 2;font-size: 14px;">R.J.Palacio</span>
+		</div>
 		<!--<audio preload="auto" controls></audio>-->
 		<div id="bar">
 			<div id="container">
@@ -15,10 +19,11 @@
 			<span id="playing_time">00:00</span><span> / </span><span id="goal_time">00:00</span>
 		</div>
 		<br>
-		<button id="last_song">上一首</button>
-		<button id="play_song">播放</button>
-		<button id="next_song">下一首</button>
+		<button id="last_song">Previous</button>
+		<button id="play_song">Play</button>
+		<button id="next_song">Next</button>
 		<script src="list.js"></script>
+		<script src="writer.js"></script>
 		<script src="player.js"></script>
 		<script src="../support/jQuery.js"></script>
 	</body>

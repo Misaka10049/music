@@ -11,12 +11,6 @@ body{
 	-ms-user-select: none;
 	user-select: none;
 }
-#name{
-	line-height: 1.5;
-	padding: 10px 0;
-	overflow: hidden;
-	text-overflow: ellipsis;
-}
 button{
 	display: inline-block;
 	color: var(--current-color);
@@ -54,19 +48,19 @@ a{
 	width: 14px;
 	height: 14px;
 	border-radius: 50%; 
-    background: #FFF;
-    position: relative;
-    border: solid #000 0.5px;
-    left: -8px;
-    top: -12.5px;
-    z-index: 1;
+	background: #FFF;
+	position: relative;
+	border: solid #000 0.5px;
+	left: -8px;
+	top: -12.5px;
+	z-index: 1;
 }
 #cir{
 	width: 6px;
 	height: 6px;
-    position: relative;
-    left: 4px;
-    top: 4px;
+	position: relative;
+	left: 4px;
+	top: 4px;
 	border-radius: 50%; 
-    background: #b9180f;
+	background: #b9180f;
 }

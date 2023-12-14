@@ -1,3 +1,6 @@
+- v0.6.2
+- 改成了 Wonder 原声带
+
 - v0.6.1
 - 修复了触屏会同时触发touchstart和mousedown的bug
 
