@@ -24,7 +24,7 @@ const song_name=()=>{
 	else
 	{
 		$("name").innerText=name
-		$("cover").src="./audio/cover.jpg"
+		$("cover").src="./Audio/Cover.jpg"
 	}
 	$("writer").innerText=writer[playing]
 	document.title="▶ "+$("name").innerText
