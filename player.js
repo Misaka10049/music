@@ -12,6 +12,17 @@ const button_text=()=>{
 	if(!audio.paused) $("play_song").innerText="Pause"
 	else $("play_song").innerText="Play"
 }
+var frame=document.createElement("iframe")
+frame.allowFullscreen=true
+frame.src="./../planet"
+frame.style.width="0"
+frame.style.height="0"
+frame.style.position="absolute"
+frame.style.top="-100px"
+document.body.append(frame)
+$("cover").addEventListener("click",function(){
+	if(playing==7) frame.requestFullscreen()
+})
 const song_name=()=>{
 	var name=list[playing].slice(0,-4)
 	if(playing>=0&&playing<=9) name=name.slice(3)
@@ -24,7 +35,7 @@ const song_name=()=>{
 	else
 	{
 		$("name").innerText=name
-		$("cover").src="./Audio/Cover.jpg"
+		$("cover").src="./audio/cover.jpg"
 	}
 	$("writer").innerText=writer[playing]
 	document.title="▶ "+$("name").innerText
